@@ -1,9 +1,9 @@
-import Gotcha from "./tutorial/01-useState/starter/05-useState-gotcha";
-// import Final from './tutorial/01-useState/final/04-useState-object'
+import Starter from "./tutorial/02-useEffect/starter/01-code-example";
+// import Final from "./tutorial/02-useEffect/final/01-code-example";
 function App() {
   return (
     <div className="container">
-      <Gotcha />
+      <Starter />
       {/* <Final/> */}
     </div>
   );
