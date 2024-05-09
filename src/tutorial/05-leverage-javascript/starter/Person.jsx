@@ -1,6 +1,11 @@
+import avatar from "../../../assets/default-avatar.svg";
 import React from "react";
-export function Person({ name, nickName, image }) {
-  const img = image[0].small.url;
+// eslint-disable-next-line react/prop-types
+export function Person({ name, nickName = "shakeAndBake", images }) {
+  // eslint-disable-next-line react/prop-types
+  //   const img = images?.[0].small?.url || avatar;
+  const img = images?.[0].small?.url ?? avatar;
+
   return (
     <div key={name}>
       <img src={img} alt={name} style={{ width: "50px" }} />
