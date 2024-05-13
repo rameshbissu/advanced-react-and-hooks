@@ -14,6 +14,10 @@ const UserChallenge = () => {
     setUsers(updatedUsers);
     setName("");
   };
+  const removeUser = (id) => {
+    const updatedUsers = users.filter((person) => person.id !== id);
+    setUsers(updatedUsers);
+  };
 
   return (
     <div>
@@ -40,25 +44,24 @@ const UserChallenge = () => {
       </form>
       {/* render users below */}
       <h4>Users</h4>
-      <ul>
-        {users.map((user) => {
-          const { id, name } = user;
-          return (
-            <li key={id} style={listStyle}>
-              {name}
-            </li>
-          );
-        })}
-      </ul>
+      {users.map((user) => {
+        const { id, name } = user;
+        return (
+          <div key={id}>
+            <h4>{name}</h4>
+            <button
+              onClick={() => {
+                removeUser(user.id);
+              }}
+              className="btn"
+            >
+              remove
+            </button>
+          </div>
+        );
+      })}
     </div>
   );
-};
-
-const listStyle = {
-  width: "60%",
-  background: "#cbd5e1",
-  margin: "10px auto",
-  border: "1px solid #94a3b8",
 };
 
 export default UserChallenge;
