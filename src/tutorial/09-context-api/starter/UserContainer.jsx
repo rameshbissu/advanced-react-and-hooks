@@ -1,6 +1,9 @@
-import React from "react";
+import { useContext } from "react";
+import { NavbarContext } from "./Navbar";
 
-const UserContainer = ({ user, logout, login }) => {
+const UserContainer = () => {
+  const { user, logout } = useContext(NavbarContext);
+
   return (
     <div className="user-container">
       {user ? (
@@ -11,12 +14,7 @@ const UserContainer = ({ user, logout, login }) => {
           </button>
         </>
       ) : (
-        <>
-          <p>Please Login</p>
-          <button type="button" className="btn" onClick={login}>
-            Login,bob
-          </button>
-        </>
+        <p>Please Login</p>
       )}
     </div>
   );
