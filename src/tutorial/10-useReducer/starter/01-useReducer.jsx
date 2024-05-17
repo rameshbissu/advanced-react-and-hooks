@@ -6,10 +6,16 @@ const defaultState = {
   isLoading: false,
 };
 
+const CLEAR_LIST = "CLEAR_LIST";
+const RESET_LIST = "RESET_LIST";
+const REMOVE_ITEM = "REMOVE_ITEM";
+
 const reducer = (state, action) => {
   if (action.type === "CLEAR_LIST") {
     return { ...state, people: [] };
   }
+  // return state;
+  throw new Error(`No Matching "${action.type}" - action type`);
 };
 
 const ReducerBasics = () => {
@@ -21,10 +27,11 @@ const ReducerBasics = () => {
     // setPeople(newPeople);
   };
   const clearList = () => {
-    dispatch({ type: "CLEAR_LIST" });
+    dispatch({ type: CLEAR_LIST });
     // setPeople([]);
   };
   const resetList = () => {
+    dispatch({ type: "something" });
     // setPeople(data);
   };
   // console.log(state);
