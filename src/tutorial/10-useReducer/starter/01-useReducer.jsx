@@ -3,9 +3,14 @@ import { data, people } from "../../../data";
 
 const defaultState = {
   people: data,
+  isLoading: false,
 };
 
-const reducer = () => {};
+const reducer = (state, action) => {
+  if (action.type === "CLEAR_LIST") {
+    return { ...state, people: [] };
+  }
+};
 
 const ReducerBasics = () => {
   const [state, dispatch] = useReducer(reducer, defaultState);
@@ -16,12 +21,13 @@ const ReducerBasics = () => {
     // setPeople(newPeople);
   };
   const clearList = () => {
+    dispatch({ type: "CLEAR_LIST" });
     // setPeople([]);
   };
   const resetList = () => {
     // setPeople(data);
   };
-  console.log(state);
+  // console.log(state);
   return (
     <div>
       {state.people.map((person) => {
