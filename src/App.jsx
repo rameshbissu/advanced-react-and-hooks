@@ -1,11 +1,11 @@
-import Final from "./tutorial/11-performance/final/01-lower-state/Counter";
-import Starter from "./tutorial/11-performance/starter/03-hooks";
+import Final from "./tutorial/02-useEffect/final/04-fetch-data";
+// import Starter from "./tutorial/11-performance/starter/03-hooks";
 
 function App() {
   return (
     <>
-      {/* <Final /> */}
-      <Starter />
+      <Final />
+      {/* <Starter /> */}
     </>
   );
 }
